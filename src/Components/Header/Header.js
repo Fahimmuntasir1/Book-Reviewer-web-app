@@ -1,12 +1,17 @@
-import React from 'react';
-import "./Header.css"
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <nav className="menu-bar sticky">
+      <Link to="/">HOME</Link>
+      <Link to="/reviews">REVIEWS</Link>
+      <Link to="/dashboard">DASHBOARD</Link>
+      <Link to="/blogs">BLOGS</Link>
+      <Link to="/about">ABOUT</Link>
+    </nav>
+  );
 };
 
 export default Header;
