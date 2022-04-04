@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useReview = () => {
   const [reviews, setReviews] = useState([]);
-  console.log(reviews);
+  // console.log(reviews);
   useEffect(() => {
     fetch("FakeData.json")
       .then((res) => res.json())

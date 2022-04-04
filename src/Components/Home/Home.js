@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useReview from "../../hook/useReviews";
+import Card from "../Card/Card";
 import "./Home.css";
 
 const Home = () => {
   const [reviews, setReviews] = useReview();
-  const homeReview=reviews.slice(1,4)
   return (
     <div>
       <div className=" intro-page flex items-center justify-between">
@@ -41,11 +42,17 @@ const Home = () => {
           ></img>
         </div>
       </div>
-      <div>
+      <div className=" my-5">
         <h2 className="text-4xl font-semibold my-10">Customer Reviews</h2>
-        {homeReview.map((review) => (
-          <li>{review.name}</li>
-        ))}
+        <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+          {reviews.slice(1, 4).map((reviewItem) => (
+            <Card key={reviewItem.id} review={reviewItem}></Card>
+          ))}
+        </div>
+        <button >
+          {" "}
+          <Link className="px-5 py-2 bg-yellow-400" to="/reviews">See All</Link>
+        </button>
       </div>
     </div>
   );
