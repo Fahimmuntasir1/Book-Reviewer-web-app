@@ -1,7 +1,10 @@
 import React from "react";
+import useReview from "../../hook/useReviews";
 import "./Home.css";
 
 const Home = () => {
+  const [reviews, setReviews] = useReview();
+  const homeReview=reviews.slice(1,4)
   return (
     <div>
       <div className=" intro-page flex items-center justify-between">
@@ -39,7 +42,10 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <h2>customer reviews</h2>
+        <h2 className="text-4xl font-semibold my-10">Customer Reviews</h2>
+        {homeReview.map((review) => (
+          <li>{review.name}</li>
+        ))}
       </div>
     </div>
   );
