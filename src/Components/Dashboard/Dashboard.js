@@ -1,9 +1,10 @@
 import React from 'react';
+import Recharts from '../Recharts/Recharts';
 
 const Dashboard = () => {
     return (
         <div>
-            <h2>hello Dashboard</h2>
+            <Recharts></Recharts>
         </div>
     );
 };

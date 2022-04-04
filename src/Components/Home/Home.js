@@ -1,11 +1,7 @@
 import React from "react";
-import useReview from "../../hook/useReviews";
 import "./Home.css";
 
 const Home = () => {
-  // const [reviews, setReviews] = useReview();
-
-  // console.log(reviews);
   return (
     <div>
       <div className=" intro-page flex items-center justify-between">
